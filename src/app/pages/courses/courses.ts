@@ -25,6 +25,7 @@ export class Courses {
     searchTerm = '';
     selectedSubject = '';
     subjects: string[] = [];
+    totalCourses = 0;
 
     sortColumn: keyof Course | '' = '';
     sortDirection: 'asc' | 'desc' = 'asc';
@@ -38,6 +39,7 @@ export class Courses {
         this.coursesService.getCourses().subscribe((data) => {
             this.allCourses = data;
             this.courses = data;
+            this.totalCourses = this.courses.length;
             this.subjects = Array.from(new Set(data.map(course => course.subject))).sort();
         });
     }
@@ -51,6 +53,8 @@ export class Courses {
             course.courseName.toLowerCase().includes(term)) &&
             (subject === '' || course.subject === subject)
         );
+
+        this.totalCourses = this.courses.length;
     }
 
     addToSchedule(course: Course) {
