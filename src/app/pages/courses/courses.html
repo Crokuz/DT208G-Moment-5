@@ -11,9 +11,9 @@ Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025
     <p>Antal kurser i listan: {{ totalCourses }}</p>
 
     <div class="filters">
-        <input type="text" placeholder="Sök i kurslistan" [(ngModel)]="searchTerm" (input)="filterCourses()" class="search-box"/>
+        <input type="text" placeholder="Sök i kurslistan" [(ngModel)]="searchTerm" (input)="filterCourses()" class="searchField"/>
 
-        <select [(ngModel)]="selectedSubject" (change)="filterCourses()" class="subject-dropdown">
+        <select [(ngModel)]="selectedSubject" (change)="filterCourses()" class="subjectDropdown">
             <option value="">Alla ämnen</option>
             <option *ngFor="let sub of subjects" [value]="sub">{{ sub }}</option>
         </select>

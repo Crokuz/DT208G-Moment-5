@@ -29,10 +29,12 @@ export class Schedule {
         });
     }
 
+    //Metod som kallar på schema-servicen för att ta bort en kurs
     removeFromSchedule(courseCode: string) {
         this.scheduleService.removeCourse(courseCode);
     }
 
+    //Metod som updaterar den samanlaggda mängden högskolepoäng i listan
     private updateTotalPoints() {
         this.totalPoints = this.schedule.reduce((sum, course) => sum + course.points, 0);
     }

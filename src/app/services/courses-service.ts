@@ -19,6 +19,7 @@ export class CoursesService {
 
     constructor(private http: HttpClient) {}
 
+    //Metod för att hämta kursdata med hjälp av ett interface för att säkerställa typsäkerhet
     getCourses(): Observable<Course[]> {
         return this.http.get<Course[]>(this.url);
     }

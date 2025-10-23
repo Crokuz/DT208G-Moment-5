@@ -22,9 +22,9 @@ import { ScheduleService } from '../../services/schedule-service';
 export class Courses {
     allCourses: Course[] = [];
     courses: Course[] = [];
+    subjects: string[] = [];
     searchTerm = '';
     selectedSubject = '';
-    subjects: string[] = [];
     totalCourses = 0;
 
     sortColumn: keyof Course | '' = '';
@@ -35,15 +35,18 @@ export class Courses {
         private scheduleService: ScheduleService
     ) {}
 
+    //Metod för att hämta data om kurser 
     ngOnInit() {
         this.coursesService.getCourses().subscribe((data) => {
             this.allCourses = data;
             this.courses = data;
             this.totalCourses = this.courses.length;
+            //Hämtar, utesluter dubletter och sorterar en lista på ämnen från JSON-filen
             this.subjects = Array.from(new Set(data.map(course => course.subject))).sort();
         });
     }
 
+    //Metod för att filtrera litan på kurser
     filterCourses() {
         const term = this.searchTerm.toLowerCase();
         const subject = this.selectedSubject;
@@ -57,10 +60,12 @@ export class Courses {
         this.totalCourses = this.courses.length;
     }
 
+    //Metod som kallar på schema-servicen för att lagra en kurs
     addToSchedule(course: Course) {
         this.scheduleService.addCourse(course);
     }
 
+    //Metod för att sortera kolumnerna i tabellen
     sortBy(column: keyof Course) {
         if (this.sortColumn === column) {
             this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
