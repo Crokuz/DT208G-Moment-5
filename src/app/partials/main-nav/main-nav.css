@@ -1,0 +1,25 @@
+/*
+Författare: Leander Norberg
+Projketnamn: Moment 5
+Beskrivning: Slutprojekt utvecklat i samband med kursen 
+Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025 
+*/
+
+nav ul {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+nav li a {
+    font-family: 'Open Sans';
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    font-weight: bold;
+}

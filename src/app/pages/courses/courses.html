@@ -1,1 +1,43 @@
-<p>courses works!</p>
+<!--
+Författare: Leander Norberg
+Projektnamn: Moment 5
+Beskrivning: Slutprojekt utvecklat i samband med kursen 
+Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025 
+-->
+
+<section class="mainContent">
+    <h2>Kurser</h2>
+
+    <div class="filters">
+        <input type="text" placeholder="Sök i kurslistan" [(ngModel)]="searchTerm" (input)="filterCourses()" class="search-box"/>
+
+        <select [(ngModel)]="selectedSubject" (change)="filterCourses()" class="subject-dropdown">
+            <option value="">Alla ämnen</option>
+            <option *ngFor="let sub of subjects" [value]="sub">{{ sub }}</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th (click)="sortBy('courseCode')">Kurskod</th>
+                <th (click)="sortBy('courseName')">Kursnamn</th>
+                <th (click)="sortBy('points')">Poäng</th>
+                <th (click)="sortBy('subject')">Ämne</th>
+                <th>Lägg till</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td>{{ course.courseCode }}</td>
+                <td>{{ course.courseName }}</td>
+                <td>{{ course.points }}</td>
+                <td>{{ course.subject }}</td>
+                <td>
+                    <button (click)="addToSchedule(course)">Lägg till</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

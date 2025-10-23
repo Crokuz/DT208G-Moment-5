@@ -1,1 +1,36 @@
-<p>schedule works!</p>
+<!--
+Författare: Leander Norberg
+Projektnamn: Moment 5
+Beskrivning: Slutprojekt utvecklat i samband med kursen 
+Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025 
+-->
+
+<section class="mainContent">
+    <h2>Schema</h2>
+
+    <p>Total mängd poäng: {{ totalPoints }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Kurskod</th>
+                <th>Kursnamn</th>
+                <th>Poäng</th>
+                <th>Ämne</th>
+                <th>Ta bort</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let course of schedule">
+                <td>{{ course.courseCode }}</td>
+                <td>{{ course.courseName }}</td>
+                <td>{{ course.points }}</td>
+                <td>{{ course.subject }}</td>
+                <td>
+                    <button (click)="removeFromSchedule(course.courseCode)">Ta bort</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

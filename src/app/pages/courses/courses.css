@@ -1,0 +1,59 @@
+/*
+Författare: Leander Norberg
+Projektnamn: Moment 5
+Beskrivning: Slutprojekt utvecklat i samband med kursen 
+Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025 
+*/
+
+th {
+    line-height: 2em;
+    text-align: left;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid gainsboro;
+}
+
+th:hover {
+    background-color: gainsboro;
+}
+
+th, td {
+    padding: 0.5em 2em 0.5em 0;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+td {
+    border-top: 1px solid gainsboro;
+}
+
+table{
+    width: 100%;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+.search-box, .subject-dropdown  {
+  width: 100%;
+  max-width: 25vw;
+  padding: 0.6em;
+  margin-bottom: 2em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.filters {
+  display: flex;
+  gap: 2em;
+}
+
+@media screen and (max-width: 1600px) {
+    th, td {
+        padding: 0.5em 0.7em 0.5em 0;
+        border-collapse: collapse;
+        margin: 0;
+    } 
+}
