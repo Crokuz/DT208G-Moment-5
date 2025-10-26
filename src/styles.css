@@ -82,15 +82,17 @@ button:hover {
 
     #headerWrapper {
         max-width: 80vw;
+        display: block;
+        gap: none;
     } 
 }
 
 @media screen and (max-width: 800px) {
     .mainContent {
-        max-width: 90vw;
+        max-width: 95vw;
     }  
 
     #headerWrapper {
-        max-width: 90vw;
+        max-width: 95vw;
     } 
 }

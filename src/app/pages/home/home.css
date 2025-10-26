@@ -70,7 +70,7 @@ picture, picture img {
 @media screen and (max-width: 1200px) {
     .quoteCard {
         max-width: 100%;
-        padding-top: 3em;
+        margin: 3em 0;
     }   
 
     .quoteCard picture, .quoteCard img {

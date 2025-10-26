@@ -1,0 +1,36 @@
+/*
+Författare: Leander Norberg
+Projketnamn: Moment 5
+Beskrivning: Slutprojekt utvecklat i samband med kursen 
+Programmering i TypeScript (DT208G ) vid mittuniversitetet, VT2025 
+*/
+
+.quoteWrapper {
+    padding: 1em;
+    width: 100%;   
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    gap: 1em;
+}
+
+.quoteMark {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 7em;
+    line-height: 0.5em;
+    margin: 0 0 -0.3em 0;
+    color: gold;
+}
+
+.quoteText {
+    font-family: 'Noto Serif';
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.quoteAuthor {
+    color: dimgray;
+    font-size: 0.9em;
+}
