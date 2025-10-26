@@ -36,9 +36,9 @@ export class ScheduleService {
             const current = this.getSchedule();
             //Förebygger dubbletter
             if (!current.find(c => c.courseCode === course.courseCode)) {
-            const updated = [...current, course];
-            this.scheduleSubject.next(updated);
-            this.saveToLocalStorage(updated);
+                const updated = [...current, course];
+                this.scheduleSubject.next(updated);
+                this.saveToLocalStorage(updated);
             }
     }
 
